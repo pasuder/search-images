@@ -7,7 +7,7 @@ It was done based on [this](http://stackoverflow.com/a/32622147/1702557).
 ## Run
 
 1. Have Docker installed
-1. Clone repository `git clone https://github.com/SuderPawel/search-images`
+1. Clone repository `git clone https://github.com/pasuder/search-images`
 1. Build image with command `docker build -t search-images .` executed in project directory
 1. Run with command `docker run search-images tags-for image`
 
