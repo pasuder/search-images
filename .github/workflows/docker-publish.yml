@@ -1,0 +1,23 @@
+ 
+name: Publish
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Push to GitHub Packages
+      uses: docker/build-push-action@v1
+      with:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GH_TOKEN }}
+        registry: docker.pkg.github.com
+        repository: pasuder/search-images/app
+        tag_with_ref: true
